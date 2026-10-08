@@ -1,0 +1,9 @@
+pyspark
+pandas
+pyarrow
+matplotlib
+jupyter
+nbconvert
+pytest
+requests
+ipykernel
