@@ -10,6 +10,11 @@ def get_spark(app_name="bigdata-spark-analysis", master="local[*]"):
     """Return a local SparkSession; configures Hadoop/Python env on Windows."""
     os.environ.setdefault("PYSPARK_PYTHON", sys.executable)
     os.environ.setdefault("PYSPARK_DRIVER_PYTHON", sys.executable)
+    # Python workers must be able to import our modules (needed for RDD functions defined in src/)
+    src = str(ROOT / "src")
+    parts = [p for p in os.environ.get("PYTHONPATH", "").split(os.pathsep) if p]
+    if src not in parts:
+        os.environ["PYTHONPATH"] = os.pathsep.join([src] + parts)
     hadoop = ROOT / "hadoop"
     if os.name == "nt" and (hadoop / "bin" / "winutils.exe").exists():
         os.environ["HADOOP_HOME"] = str(hadoop)
