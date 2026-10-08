@@ -1,0 +1,7 @@
+step,rows
+rows_before,2964624
+fare_amount <= 0 (or null),38341
+trip_distance <= 0 (or null),56569
+passenger_count <= 0 (or null),30660
+dropoff earlier than pickup (or null times),8
+rows_after,2723797
