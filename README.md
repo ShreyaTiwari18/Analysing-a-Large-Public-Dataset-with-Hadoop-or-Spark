@@ -2,15 +2,16 @@
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python&logoColor=white)
 ![PySpark](https://img.shields.io/badge/PySpark-4.x-orange?logo=apachespark&logoColor=white)
-![License](https://img.shields.io/badge/License-MIT-green)
 
 A beginner-friendly Big Data portfolio project that analyses ~3 million NYC Yellow Taxi trips (January 2024) with PySpark and demonstrates the concepts from Simplilearn's *Introduction to Big Data* course: the 5 Vs, structured vs unstructured data, HDFS, MapReduce and the Hadoop ecosystem. It includes a MapReduce word-count demo (pure Python and Spark RDD), six reusable analysis jobs, charts, an executed notebook and a pytest suite.
+
+**Author:** Shreya Tiwari
 
 ## Dataset
 - **NYC TLC Yellow Taxi Trip Records, January 2024** (Parquet, ~50 MB, 2,964,624 rows) - https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page
 - **Taxi Zone Lookup** (CSV) - same page.
 - **Alice's Adventures in Wonderland** from [Project Gutenberg](https://www.gutenberg.org/ebooks/11) (public domain) for the word-count demo.
-- Licence: TLC data is published as open data by the City of New York under the [NYC Open Data terms of use](https://www.nyc.gov/html/data/terms.html).
+- Data licence: TLC data is published as open data by the City of New York under the [NYC Open Data terms of use](https://www.nyc.gov/html/data/terms.html).
 
 Full raw data is **not** committed (`data/raw/` is gitignored). A 1,000-row sample is in `data/sample/` so tests run quickly.
 
@@ -86,7 +87,6 @@ docs/report.md              full report
 - Null `passenger_count` is treated as invalid (removed with the `<= 0` rule).
 - Tip % = `tip_amount / fare_amount * 100`. Cash tips are not recorded by TLC, so tip-by-hour uses credit-card trips only.
 - Payment code 0 is mapped to "Flex fare"; any unmapped code is shown as "Other".
-- The licence holder is Shreya Tiwari (see `LICENSE`).
 
 ## Setup notes
 - `gh` (GitHub CLI) was not installed, so the repo was pushed with plain `git` to an existing remote.
