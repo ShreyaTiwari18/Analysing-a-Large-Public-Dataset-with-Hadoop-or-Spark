@@ -86,7 +86,7 @@ docs/report.md              full report
 - Null `passenger_count` is treated as invalid (removed with the `<= 0` rule).
 - Tip % = `tip_amount / fare_amount * 100`. Cash tips are not recorded by TLC, so tip-by-hour uses credit-card trips only.
 - Payment code 0 is mapped to "Flex fare"; any unmapped code is shown as "Other".
-- The licence holder is left as `YOUR NAME` - replace it in `LICENSE`.
+- The licence holder is Shreya Tiwari (see `LICENSE`).
 
 ## Setup notes
 - `gh` (GitHub CLI) was not installed, so the repo was pushed with plain `git` to an existing remote.
